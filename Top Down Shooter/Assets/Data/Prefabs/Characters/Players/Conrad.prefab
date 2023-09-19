@@ -7269,6 +7269,7 @@ GameObject:
   - component: {fileID: 5291027997075485752}
   - component: {fileID: -7080199358105860317}
   - component: {fileID: 6150758365140635797}
+  - component: {fileID: -2411412455568711925}
   m_Layer: 0
   m_Name: Conrad
   m_TagString: Player
@@ -7689,8 +7690,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ability1Projectile: {fileID: 0}
   ability1SpawnPoint: {fileID: 0}
+  shootRotation: {x: 0, y: 0, z: 0, w: 0}
   abilityInstantiationPoint: {fileID: 1111576705753926727}
   weaponPoint: {fileID: 5779160452306214119}
+--- !u!114 &-2411412455568711925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6697655419357067916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8c7dfeab80eac647a8b943dab637b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  target: {fileID: 6321095315236528182}
+  camera: {fileID: 0}
+  fadedAlpha: 0.33
+  retainShadows: 1
+  targetPositionOffset: {x: 0, y: 1, z: 0}
 --- !u!1 &6799834236611882664
 GameObject:
   m_ObjectHideFlags: 0
