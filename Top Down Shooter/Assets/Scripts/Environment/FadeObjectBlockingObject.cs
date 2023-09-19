@@ -121,10 +121,12 @@ namespace UB
                     objectsToRemove.Add(_fadingObject);
                 }
 
-                foreach(FadingObject removeObject in objectsToRemove)
-                {
-                    objectsBlockingView.Remove(removeObject);
-                }
+               
+            }
+
+            foreach (FadingObject removeObject in objectsToRemove)
+            {
+                objectsBlockingView.Remove(removeObject);
             }
         }
 
