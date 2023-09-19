@@ -7676,6 +7676,9 @@ MonoBehaviour:
   ability3Canvas: {fileID: 118498153094636495}
   ability3SkillShot: {fileID: 7123079182756123924}
   maxAbility3Distance: 0
+  floorLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &6150758365140635797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7713,6 +7716,8 @@ MonoBehaviour:
   fadedAlpha: 0.33
   retainShadows: 1
   targetPositionOffset: {x: 0, y: 1, z: 0}
+  FadeSpeed: 1
+  objectsBlockingView: []
 --- !u!1 &6799834236611882664
 GameObject:
   m_ObjectHideFlags: 0

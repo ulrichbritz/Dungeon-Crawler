@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: {x: 3, y: 3}
   startPos: 0
-  roomPrefab: {fileID: 1863236254441009752, guid: ffd16eb3466ccef4581bf8c3d986a532,
+  roomPrefab: {fileID: 1863236254441009752, guid: 59a54f71c8b4c1147bbae3f199427091,
     type: 3}
   offset: {x: 32, y: 32}

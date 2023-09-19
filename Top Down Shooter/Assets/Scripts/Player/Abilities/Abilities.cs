@@ -59,6 +59,8 @@ namespace UB
         private RaycastHit hit;
         private Ray ray;
 
+        [SerializeField] private LayerMask floorLayerMask;
+
         private void Awake()
         {
             playerManager = GetComponent<PlayerManager>();
@@ -112,7 +114,7 @@ namespace UB
         {
             if (ability1SkillShot.enabled && !isAbility1Cooldown)
             {
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, floorLayerMask))
                 {
                     position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 }
@@ -137,7 +139,7 @@ namespace UB
             }
             else if (ability2SkillShot.enabled && !isAbility2Cooldown)
             {
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, floorLayerMask))
                 {
                     position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 }
@@ -161,7 +163,7 @@ namespace UB
             }
             else if (ability3SkillShot.enabled && !isAbility3Cooldown)
             {
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, floorLayerMask))
                 {
                     position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 }
@@ -283,7 +285,7 @@ namespace UB
         {
             if (ability1SkillShot.enabled)
             {
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, floorLayerMask))
                 {
                     position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 }
@@ -299,7 +301,7 @@ namespace UB
         {
             if (ability2SkillShot.enabled)
             {
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, floorLayerMask))
                 {
                     position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 }
@@ -315,7 +317,7 @@ namespace UB
         {
             if (ability3SkillShot.enabled)
             {
-                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity, floorLayerMask))
                 {
                     position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 }

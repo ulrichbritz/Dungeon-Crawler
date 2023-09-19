@@ -18,7 +18,7 @@ namespace UB
         [SerializeField] private List<FadingObject> objectsBlockingView = new List<FadingObject>();
         private Dictionary<FadingObject, Coroutine> runningCoroutines = new Dictionary<FadingObject, Coroutine>();
 
-        private RaycastHit[] hits = new RaycastHit[5];
+        private RaycastHit[] hits = new RaycastHit[10];
 
         private void Awake()
         {
