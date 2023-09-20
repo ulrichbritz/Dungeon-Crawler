@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
 
 namespace UB
 {
@@ -53,7 +54,8 @@ namespace UB
             enemiesLeftText.text = "Enemies Left: ";
             dungeonClearedObj.SetActive(false);
 
-            SpawnMobs();     
+            // SpawnMobs();
+            GetEnemiesAliveAtStart();
         }
 
         private void SpawnMobs()
@@ -97,6 +99,18 @@ namespace UB
                 result = Vector3.zero;
                 return false;
             }
+        }
+
+        private void GetEnemiesAliveAtStart()
+        {
+            EnemyManager[] enemyManagers = FindObjectsOfType<EnemyManager>();
+
+            foreach(EnemyManager enemyManager in enemyManagers)
+            {
+                enemiesAlive.Add(enemyManager);
+            }
+
+            enemiesLeftText.text = "Enemies Left = " + enemiesAlive.Count;
         }
 
         public void CheckIfWasLastEnemy(EnemyManager enemyManager)
