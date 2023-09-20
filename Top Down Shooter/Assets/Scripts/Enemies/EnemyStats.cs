@@ -32,9 +32,10 @@ namespace UB
             playerCameraManager = PlayerCameraManager.instance;
         }
 
-        private void Update()
+        protected override void Update()
         {
-            if(playerCameraManager != null)
+
+            if (playerCameraManager != null)
             {
                 cameraDirection = playerCameraManager.cameraObject.transform.forward;
                 cameraDirection.y = 0;
@@ -45,9 +46,6 @@ namespace UB
             {
                 playerCameraManager = PlayerCameraManager.instance;
             }
-            
-
-            //resourcesCanvas.transform.LookAt(new Vector3(playerCameraManager.transform.position.x, 0, playerCameraManager.transform.position.z));
         }
 
         public override void TakeDamage(int _physicalDamage, int _magicalDamage)
@@ -89,8 +87,8 @@ namespace UB
 
             int coinAmountToGive = Random.Range(minCoinValue, maxCoinValue);
             StartCoroutine(DisplayGoldGiven(coinAmountToGive));
-            PlayerManager.instance.playerStats.GetCoins(coinAmountToGive);
-            GetComponent<EnemySoundFXManager>().PlayGiveCoinsSFX(1);
+            PlayerManager.instance.playerInventoryManager.GetGold(coinAmountToGive);
+            GetComponent<EnemySoundFXManager>().PlayGiveGoldSFX(1);
 
             StartCoroutine(DestroyMe());
         }
@@ -103,7 +101,11 @@ namespace UB
 
         IEnumerator DestroyMe()
         {
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(0.5f);
+
+            resourcesCanvas.SetActive(false);
+
+            yield return new WaitForSeconds(3.5f);
 
             Destroy(gameObject);
         }

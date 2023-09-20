@@ -32,7 +32,7 @@ namespace UB
 
             Ray ray = PlayerCameraManager.instance.cameraObject.ScreenPointToRay(Input.mousePosition);
 
-            if(!EventSystem.current.IsPointerOverGameObject() && Physics.Raycast(ray, out hit, selectableLayer))
+            if(/* !EventSystem.current.IsPointerOverGameObject() && */ Physics.Raycast(ray, out hit, selectableLayer))
             {
                 highlightedObj = hit.transform;
 
@@ -57,19 +57,24 @@ namespace UB
 
         public void SelectedHighlight()
         {
-            if (highlightedObj.CompareTag("Enemy") || highlightedObj.CompareTag("Interactable"))
+            if(highlightedObj != null)
             {
-                if(selectedObj != null)
+                if (highlightedObj.CompareTag("Enemy") || highlightedObj.CompareTag("Interactable"))
                 {
-                    selectedObj.GetComponent<Outline>().enabled = false;
+                    if (selectedObj != null)
+                    {
+                        selectedObj.GetComponent<Outline>().enabled = false;
+                    }
+
+                    selectedObj = hit.transform;
+                    selectedObj.GetComponent<Outline>().enabled = true;
+
+                    highlightOutline.enabled = true;
+                    highlightedObj = null;
                 }
-
-                selectedObj = hit.transform;
-                selectedObj.GetComponent<Outline>().enabled = true;
-
-                highlightOutline.enabled = true;
-                highlightedObj = null;
             }
+
+            
         }
 
         public void DeselectHighlight()

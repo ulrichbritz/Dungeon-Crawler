@@ -11,12 +11,15 @@ namespace UB
 
         [Header("Inventory Values")]
         public int capacity = 6;
+        [HideInInspector] public int goldAmount = 0;
 
-         public List<Item> items = new List<Item>();
+        public List<Item> items = new List<Item>();
 
         //CallBacks
         public delegate void OnItemChanged();
         public OnItemChanged onItemChangedCallback;
+        public delegate void OnGoldChanged();
+        public OnGoldChanged OnGoldChangedCallback;
 
         private void Awake()
         {
@@ -51,6 +54,22 @@ namespace UB
 
             if (onItemChangedCallback != null)
                 onItemChangedCallback.Invoke();
+        }
+
+        public void GetGold(int amount)
+        {
+            goldAmount += amount;
+
+            if (OnGoldChangedCallback != null)
+                OnGoldChangedCallback.Invoke();
+        }
+
+        public void LoseGold(int amount)
+        {
+            goldAmount -= amount;
+
+            if (OnGoldChangedCallback != null)
+                OnGoldChangedCallback.Invoke();
         }
     }
 }

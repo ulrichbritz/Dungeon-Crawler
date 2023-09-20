@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 namespace UB
 {
@@ -16,6 +18,9 @@ namespace UB
         [Header("Slot Handling")]
         private InventorySlot[] slots;
 
+        [Header("Gold UI")]
+        [SerializeField] private TextMeshProUGUI goldText;
+
         private void Awake()
         {
             playerInventoryManager = PlayerManager.instance.playerInventoryManager;
@@ -27,6 +32,7 @@ namespace UB
             playerInventoryManager = PlayerManager.instance.playerInventoryManager;
 
             playerInventoryManager.onItemChangedCallback += UpdateUI;
+            playerInventoryManager.OnGoldChangedCallback += UpdateGoldUI;
 
             slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         }
@@ -44,6 +50,11 @@ namespace UB
                     slots[i].ClearSlot();
                 }
             }
+        }
+
+        private void UpdateGoldUI()
+        {
+            //goldText.text = playerInventoryManager.goldAmount.ToString();
         }
     }
 }

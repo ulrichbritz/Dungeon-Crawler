@@ -6,14 +6,14 @@ namespace UB
 {
     public class EnemySoundFXManager : CharacterSoundFXManager
     {
-        [Header("Coins")]
+        [Header("Gold")]
         [SerializeField] AudioSource extaSFXAudioSource;
-        [SerializeField] private AudioClip giveCoinsSFX;
+        [SerializeField] private AudioClip giveGoldSFX;
 
-        public void PlayGiveCoinsSFX(float volume)
+        public void PlayGiveGoldSFX(float volume)
         {
             extaSFXAudioSource.volume = volume;
-            extaSFXAudioSource.PlayOneShot(giveCoinsSFX);
+            extaSFXAudioSource.PlayOneShot(giveGoldSFX);
         }
     }
 }

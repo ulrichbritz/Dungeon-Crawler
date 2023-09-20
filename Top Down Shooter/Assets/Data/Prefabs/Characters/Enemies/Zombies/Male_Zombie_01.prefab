@@ -1988,7 +1988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  outlineMode: 1
+  outlineMode: 0
   outlineColor: {r: 0.990566, g: 0, b: 0, a: 1}
   outlineWidth: 2.5
   precomputeOutline: 1
@@ -2121,7 +2121,7 @@ MonoBehaviour:
   deathAudioClip: {fileID: 8300000, guid: eef2c3e09474522479055a57e2bfc5d6, type: 3}
   hurtAudioClip: {fileID: 0}
   extaSFXAudioSource: {fileID: 2927817181225661835}
-  giveCoinsSFX: {fileID: 8300000, guid: 97badf70f72dfb1428af40ca10e9b789, type: 3}
+  giveGoldSFX: {fileID: 8300000, guid: 97badf70f72dfb1428af40ca10e9b789, type: 3}
 --- !u!1 &7386156217189072828
 GameObject:
   m_ObjectHideFlags: 0
