@@ -39,6 +39,9 @@ namespace UB
 
         public void LoadScene(int sceneIndex)
         {
+            if (sceneIndex == safeSpaceRoomIndex)
+                PlayerManager.instance.playerUIManagerObject.SetActive(true);
+
             PlayerManager.instance.navMeshAgent.enabled = false;
 
             SceneManager.LoadScene(sceneIndex);       

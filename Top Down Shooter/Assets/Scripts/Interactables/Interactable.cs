@@ -47,6 +47,7 @@ namespace UB
             {
                 interactionTransform = transform;
             }
+            GetComponent<Outline>().enabled = true;
         }
 
         public void OnDefocused()
@@ -54,6 +55,7 @@ namespace UB
             isFocus = false;
             playerTransform = null;
             hasInteracted = false;
+            GetComponent<Outline>().enabled = false;
         }
 
         private void OnDrawGizmosSelected()

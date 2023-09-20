@@ -21,6 +21,9 @@ namespace UB
         [HideInInspector] public PlayerSFXManager playerSFXManager;
         [HideInInspector] public Abilities abilities;
 
+        [Header("Player UI Manager")]
+        public GameObject playerUIManagerObject;
+
         [Header("LeftClick")]
         public LayerMask movementMask;
 
