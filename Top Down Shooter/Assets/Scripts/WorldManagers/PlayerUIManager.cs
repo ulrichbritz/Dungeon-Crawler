@@ -12,6 +12,10 @@ namespace UB
         [Header("Scripts")]
         [HideInInspector] public PlayerManager playerManager;
 
+        [Header("UI Sections")]
+        public GameObject playerHUD;
+        public GameObject shopHUD;
+
         private void Awake()
         {
             if(instance == null)
@@ -27,6 +31,20 @@ namespace UB
 
             DontDestroyOnLoad(gameObject);
         }
+
+        public void OpenShop()
+        {
+            shopHUD.SetActive(true);
+            playerManager.RemoveFocus();
+            playerManager.hasUIOpen = true;
+        }
+
+        public void CloseShop()
+        {
+            shopHUD.SetActive(false);
+            playerManager.hasUIOpen = false;
+        }
+
     }
 }
 

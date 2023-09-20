@@ -86,6 +86,9 @@ namespace UB
                 if (EventSystem.current.IsPointerOverGameObject())
                     return;
 
+                if (playerManager.hasUIOpen)
+                    return;
+
                 playerManager.HandleLeftClick(); 
             }
         }
@@ -103,6 +106,9 @@ namespace UB
                 if (EventSystem.current.IsPointerOverGameObject())
                     return;
 
+                if (playerManager.hasUIOpen)
+                    return;
+
                 playerManager.HandleRightClick();
             }
         }
@@ -112,6 +118,9 @@ namespace UB
             if (ability1Input)
             {
                 ability1Input = false;
+
+                if (playerManager.hasUIOpen)
+                    return;
 
                 playerManager.abilities.Ability1Input();
             }
@@ -123,6 +132,9 @@ namespace UB
             {
                 ability2Input = false;
 
+                if (playerManager.hasUIOpen)
+                    return;
+
                 playerManager.abilities.Ability2Input();
             }
         }
@@ -133,6 +145,9 @@ namespace UB
             {
                 ability3Input = false;
 
+                if (playerManager.hasUIOpen)
+                    return;
+
                 playerManager.abilities.Ability3Input();
             }
         }
@@ -142,6 +157,9 @@ namespace UB
             if (ability4Input)
             {
                 ability4Input = false;
+
+                if (playerManager.hasUIOpen)
+                    return;
 
                 playerManager.abilities.Ability4Input();
             }

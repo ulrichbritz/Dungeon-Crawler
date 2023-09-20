@@ -36,7 +36,6 @@ namespace UB
 
         public void UpdateResourceUI()
         {
-            print("updating resources");
             hpSlider.maxValue = playerStats.GetMaxHealth();
             hpSlider.value = playerStats.currentHealth;
             hpText.text = $"{playerStats.currentHealth}/{playerStats.GetMaxHealth()}";

@@ -27,6 +27,9 @@ namespace UB
         [Header("Interaction")]
         [HideInInspector] public Interactable focus;
 
+        [Header("Player Specific Flags")]
+        [HideInInspector] public bool hasUIOpen = false;
+
         protected override void Awake()
         {
             if(instance == null)
