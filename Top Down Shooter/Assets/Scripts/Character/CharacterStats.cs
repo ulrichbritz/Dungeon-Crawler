@@ -39,6 +39,9 @@ namespace UB
         [Header("Blood")]
         [SerializeField] private GameObject bloodPrefab;
 
+        [Header("For enemies")]
+        protected int lastDamageTaken = 0;
+
         protected virtual void Awake()
         {
             characterManager = GetComponent<CharacterManager>();      
@@ -107,6 +110,7 @@ namespace UB
             //do damage to health
             currentHealth -= Mathf.Clamp(totalDamage, 0 , int.MaxValue);
             Debug.Log(transform.name + " takes " + totalDamage + " damage");
+            lastDamageTaken = totalDamage;
 
             if (currentHealth <= 0)
             {

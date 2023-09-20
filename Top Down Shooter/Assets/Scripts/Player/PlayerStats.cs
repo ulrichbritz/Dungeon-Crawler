@@ -11,11 +11,15 @@ namespace UB
         [Header("Scripts")]
         private PlayerManager playerManager;
 
+        [HideInInspector] public int coinAmount = 0;
+
         //CallBacks
         public delegate void OnHPChanged();
         public OnHPChanged onHPChangedCallback;
         public delegate void OnManaChanged();
         public OnManaChanged onManaChangedCallback;
+        public delegate void OnCoinsChanged();
+        public OnCoinsChanged OnCoinsChangedCallback;
 
         protected override void Awake()
         {
@@ -172,6 +176,22 @@ namespace UB
         public override float GetMoveSpeed()
         {
             return base.GetMoveSpeed();
+        }
+
+        public void GetCoins(int amount)
+        {
+            coinAmount += amount;
+
+            if (OnCoinsChangedCallback != null)
+                OnCoinsChangedCallback.Invoke();
+        }
+
+        public void LoseCoins(int amount)
+        {
+            coinAmount -= amount;
+
+            if (OnCoinsChangedCallback != null)
+                OnCoinsChangedCallback.Invoke();
         }
 
 

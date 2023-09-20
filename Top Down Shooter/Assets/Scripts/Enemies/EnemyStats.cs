@@ -14,6 +14,15 @@ namespace UB
         private PlayerCameraManager playerCameraManager;
         private Vector3 cameraDirection;
 
+        [Header("Other UI")]
+        [SerializeField] private TextMeshProUGUI damageTakenText;
+        [SerializeField] private GameObject goldGiveUI;
+        [SerializeField] private TextMeshProUGUI goldGivenText;
+
+        [Header("Kill Values")]
+        [SerializeField] private int minCoinValue;
+        [SerializeField] private int maxCoinValue;
+
         protected override void Awake()
         {
             base.Awake();
@@ -45,6 +54,8 @@ namespace UB
         {
             base.TakeDamage(_physicalDamage, _magicalDamage);
 
+            StartCoroutine(DisplayEnemyDamageTaken(lastDamageTaken));
+
             UpdateResourceUI();
         }
 
@@ -70,13 +81,16 @@ namespace UB
             characterManager.characterAnimationManager.PlayTargetAnimation("Death_01", true, true);
             characterManager.navMeshAgent.isStopped = true;
 
-            resourcesCanvas.SetActive(false);
-
             Outline outline = GetComponent<Outline>();
             if(outline != null)
             {
                 outline.enabled = false;
             }
+
+            int coinAmountToGive = Random.Range(minCoinValue, maxCoinValue);
+            StartCoroutine(DisplayGoldGiven(coinAmountToGive));
+            PlayerManager.instance.playerStats.GetCoins(coinAmountToGive);
+            GetComponent<EnemySoundFXManager>().PlayGiveCoinsSFX(1);
 
             StartCoroutine(DestroyMe());
         }
@@ -93,6 +107,28 @@ namespace UB
 
             Destroy(gameObject);
         }
+
+        IEnumerator DisplayEnemyDamageTaken(int damageTaken)
+        {
+            damageTakenText.text = damageTaken.ToString();
+
+            yield return new WaitForSeconds(0.5f);
+
+            damageTakenText.text = "";
+
+        }
+
+        IEnumerator DisplayGoldGiven(int goldGiven)
+        {
+            goldGiveUI.SetActive(true);
+            goldGivenText.text = "+" + goldGiven.ToString();  
+
+            yield return new WaitForSeconds(0.5f);
+
+            goldGiveUI.SetActive(false);
+        }
+
+        
     }
 
 }

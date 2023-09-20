@@ -96,7 +96,7 @@ namespace UB
             Ray ray = PlayerCameraManager.instance.cameraObject.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 100, interactableMask))
+            if (Physics.Raycast(ray, out hit, Mathf.Infinity, interactableMask))
             {
                 //check if hit an interactable, and set if focus if true
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
