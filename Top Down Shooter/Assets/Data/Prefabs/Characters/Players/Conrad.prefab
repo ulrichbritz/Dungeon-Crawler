@@ -7403,6 +7403,9 @@ MonoBehaviour:
   movementMask:
     serializedVersion: 2
     m_Bits: 256
+  interactableMask:
+    serializedVersion: 2
+    m_Bits: 3072
   focus: {fileID: 0}
   hasUIOpen: 0
 --- !u!114 &6783434116832437790

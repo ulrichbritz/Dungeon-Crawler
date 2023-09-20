@@ -24,6 +24,9 @@ namespace UB
         [Header("LeftClick")]
         public LayerMask movementMask;
 
+        [Header("RightClick")]
+        public LayerMask interactableMask;
+
         [Header("Interaction")]
         [HideInInspector] public Interactable focus;
 
@@ -93,7 +96,7 @@ namespace UB
             Ray ray = PlayerCameraManager.instance.cameraObject.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 100))
+            if (Physics.Raycast(ray, out hit, 100, interactableMask))
             {
                 //check if hit an interactable, and set if focus if true
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
