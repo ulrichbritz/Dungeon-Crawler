@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Armor of Defence
   icon: {fileID: 21300000, guid: a6a89319110f1f946b7c2f8cea9906a0, type: 3}
   isDefaultItem: 0
+  itemShopValue: 100
   physicalDamage: 0
   magicalDamage: 0
   armor: 5

@@ -10,6 +10,13 @@ namespace UB
 
         [SerializeField] private AudioSource musicAudioSource;
         [SerializeField] private AudioSource ambienceAudioSource;
+        [SerializeField] private AudioSource uiAudioSource;
+
+        [Header("General UI")]
+        [SerializeField] private AudioClip gameErrorSFX;
+
+        [Header("Shop SFX")]
+        [SerializeField] private AudioClip successfullItemPurchaseSFX;
 
         private void Awake()
         {
@@ -25,7 +32,24 @@ namespace UB
             DontDestroyOnLoad(gameObject);
         }
 
-        
+        #region UI SFX
+        //GENERAL UI
+        public void PlayGameErrorSFX(float volume)
+        {
+            uiAudioSource.volume = volume;
+            uiAudioSource.PlayOneShot(gameErrorSFX);
+        }
+
+        //SHOP
+        public void PlaySuccessFulItemPurchase(float volume)
+        {
+            uiAudioSource.volume = volume;
+            uiAudioSource.PlayOneShot(successfullItemPurchaseSFX);
+        }
+
+        #endregion
+
+
     }
 }
 

@@ -370,9 +370,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.24705882, g: 0.98039216, b: 0.3764706, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.24705882, g: 0.98039216, b: 0.3764706, a: 1}
     m_PressedColor: {r: 0.18903525, g: 0.6792453, b: 0.27554289, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.24705882, g: 0.98039216, b: 0.3764706, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1240,7 +1240,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b35495ad3886a14b8344c6a6c9d3da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGearSlot: 1
+  isHealingItemSlot: 0
   icon: {fileID: 3505119127699197279}
+  priceText: {fileID: 1324741843}
   physicalDamageText: {fileID: 9206375043883159654}
   magicalDamageText: {fileID: 7094049955035900709}
   attackSpeedText: {fileID: 5063235135576100108}

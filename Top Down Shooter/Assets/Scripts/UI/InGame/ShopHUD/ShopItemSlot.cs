@@ -8,10 +8,15 @@ namespace UB
 {
     public class ShopItemSlot : MonoBehaviour
     {
+        [Header("Item Slot Type")]
+        public bool isGearSlot = true;
+        public bool isHealingItemSlot = false;
+
         [Header("Item Slot Components")]
         public Image icon;
 
         [Header("Item Details")]
+        [SerializeField] TextMeshProUGUI priceText;
         [SerializeField] TextMeshProUGUI physicalDamageText;
         [SerializeField] TextMeshProUGUI magicalDamageText;
         [SerializeField] TextMeshProUGUI attackSpeedText;
@@ -35,6 +40,7 @@ namespace UB
             icon.sprite = item.icon;
             icon.enabled = true;
 
+            priceText.text = item.itemShopValue.ToString();
             physicalDamageText.text = $"Physical Damage = {item.physicalDamage}";
             magicalDamageText.text = $"Magical Damage = {item.magicalDamage}";
             attackSpeedText.text = $"Attack Speed = {item.attackSpeed}";
@@ -47,7 +53,20 @@ namespace UB
 
         public void OnBuyButton()
         {
-            PlayerManager.instance.playerInventoryManager.Add(item);
+            //if has enough coin
+
+            if (isGearSlot)
+            {
+                if (PlayerManager.instance.playerInventoryManager.Add(item))
+                {
+                    WorldSFXManager.instance.PlaySuccessFulItemPurchase(1);
+                }
+                else
+                {
+                    WorldSFXManager.instance.PlayGameErrorSFX(1);
+                }
+            }
+            
         }
 
         public void UseItem()

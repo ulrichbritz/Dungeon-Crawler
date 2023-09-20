@@ -15,6 +15,7 @@ namespace UB
         public bool isDefaultItem = false;
 
         [Header("Item Values")]
+        public int itemShopValue;
         public int physicalDamage;
         public int magicalDamage;
         public int armor;
