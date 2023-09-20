@@ -134,8 +134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collider: {fileID: 5785528301480988740}
+  bloodPrefab: {fileID: 786147381324606563, guid: e6cf7fb87ac0cf4478d77077d6f46100,
+    type: 3}
   target: {fileID: 0}
-  magicalDamage: 5
 --- !u!1 &6348089423979426007
 GameObject:
   m_ObjectHideFlags: 0

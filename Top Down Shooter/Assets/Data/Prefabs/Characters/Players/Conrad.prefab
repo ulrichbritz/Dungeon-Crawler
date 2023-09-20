@@ -7713,10 +7713,10 @@ MonoBehaviour:
     m_Bits: 128
   target: {fileID: 6321095315236528182}
   camera: {fileID: 0}
-  fadedAlpha: 0.33
+  fadedAlpha: 0.1
   retainShadows: 1
   targetPositionOffset: {x: 0, y: 1, z: 0}
-  FadeSpeed: 1
+  FadeSpeed: 5
   objectsBlockingView: []
 --- !u!1 &6799834236611882664
 GameObject:

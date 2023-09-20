@@ -83479,14 +83479,14 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.8666667
+  - time: 0.96666664
     functionName: OnEnable
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.2666667
+  - time: 1.2333333
     functionName: OnDisable
     data: 
     objectReferenceParameter: {fileID: 0}
