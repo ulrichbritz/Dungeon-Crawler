@@ -44,7 +44,19 @@ namespace UB
 
             GameObject abilityFX = Instantiate(abilityPrefab, abilityInstantiationPoint.position, transform.rotation);
 
-            StartCoroutine(DeleteSpawnedAbility(abilityFX, 0.25f));
+            AbilityProjectile abilityProjectile = abilityFX.GetComponent<AbilityProjectile>();
+            if (abilityProjectile != null)
+            {
+                abilityProjectile.travelDistance = 0f;
+                //get damage
+                abilityProjectile.carriedPhysicalDamage = Mathf.RoundToInt(PlayerStats.instance.GetPhysicalDamage(playerManager.abilities.abilities[1].physicalDamage));
+                abilityProjectile.carriedMagicalDamage = Mathf.RoundToInt(PlayerStats.instance.GetMagicalDamage(playerManager.abilities.abilities[1].magicalDamage));
+
+                abilityProjectile.instantiationPoint = new Vector3(weaponPoint.position.x, abilityProjectile.transform.position.y, weaponPoint.transform.position.z);
+                abilityProjectile.shootRotation = shootRotation;
+            }
+
+            StartCoroutine(DeleteSpawnedAbility(abilityFX, 0.5f));
         }
 
         public override void PerformAbility3()

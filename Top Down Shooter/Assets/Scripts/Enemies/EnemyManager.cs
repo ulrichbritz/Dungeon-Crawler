@@ -49,7 +49,8 @@ namespace UB
 
                 if (distance <= lookRaduis)
                 {
-                    navMeshAgent.SetDestination(playerManagingScript.player.transform.position);
+                    if (distance > enemyStats.GetAttackRange()) 
+                        navMeshAgent.SetDestination(playerManagingScript.player.transform.position);
 
                     if (distance <= attackDistance)
                     {

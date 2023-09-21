@@ -72,6 +72,19 @@ namespace UB
             }
         }
 
+        public virtual void GetHealth(int amount)
+        {
+            currentHealth += amount;
+
+            if (currentHealth > maxHealth)
+                currentHealth = maxHealth;
+        }
+
+        public virtual void ResetHealth()
+        {
+            currentHealth = Mathf.RoundToInt(GetMaxHealth());
+        }
+
         public virtual void TakeDamage(int _physicalDamage, int _magicalDamage)
         {
             //figure out physical damage after physical resist from armor
@@ -114,7 +127,6 @@ namespace UB
 
             //do damage to health
             currentHealth -= Mathf.Clamp(totalDamage, 0 , int.MaxValue);
-            Debug.Log(transform.name + " takes " + totalDamage + " damage");
             lastDamageTaken = totalDamage;
 
             if (currentHealth <= 0)

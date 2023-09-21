@@ -39,6 +39,8 @@ namespace UB
             base.Start();
         }
 
+
+
         public override void TakeDamage(int _physicalDamage, int _magicalDamage)
         {
             base.TakeDamage(_physicalDamage, _magicalDamage);

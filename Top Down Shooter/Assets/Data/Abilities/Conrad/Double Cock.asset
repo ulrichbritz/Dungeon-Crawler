@@ -19,4 +19,4 @@ MonoBehaviour:
   abilityCooldown: 5
   manaCost: 5
   physicalDamage: 0
-  magicalDamage: 8
+  magicalDamage: 10

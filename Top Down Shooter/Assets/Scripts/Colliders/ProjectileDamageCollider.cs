@@ -45,12 +45,13 @@ namespace UB
             
             if (GetComponent<AbilityProjectile>() != null)
             {
-                CharacterStats characterStats = other.gameObject.GetComponent<CharacterStats>();
+                EnemyStats characterStats = other.gameObject.GetComponent<EnemyStats>();
 
                 if (characterStats != null)
                 {
                     Instantiate(bloodPrefab, transform.position, Quaternion.identity);
-                    characterStats.TakeDamage(abilityProjectile.carriedPhysicalDamage, abilityProjectile.carriedMagicalDamage);
+                    //characterStats.TakeDamage(abilityProjectile.carriedPhysicalDamage, abilityProjectile.carriedMagicalDamage);
+                    characterStats.TakeDamage(abilityProjectile.carriedPhysicalDamage, Mathf.RoundToInt(PlayerManager.instance.abilities.abilities[0].magicalDamage));
                     Destroy(gameObject);
                 }
             }

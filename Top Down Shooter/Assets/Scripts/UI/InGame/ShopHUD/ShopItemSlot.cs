@@ -61,6 +61,7 @@ namespace UB
                     if (PlayerManager.instance.playerInventoryManager.Add(item))
                     {
                         WorldSFXManager.instance.PlaySuccessFulItemPurchase(1);
+                        PlayerManager.instance.playerInventoryManager.LoseGold(item.itemShopValue);
                     }
                     else
                     {

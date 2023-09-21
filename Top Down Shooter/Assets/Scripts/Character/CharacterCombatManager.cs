@@ -34,7 +34,6 @@ namespace UB
         protected virtual void Update()
         {
             attackCooldown -= Time.deltaTime;
-            print(attackCooldown);
         }
 
         public virtual void Attack(CharacterStats targetStats)

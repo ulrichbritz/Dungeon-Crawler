@@ -37,6 +37,7 @@ namespace UB
 
                 if (!isSafeRoomDoor)
                 {
+                    PlayerManager.instance.playerStats.ResetHealth();
                     StartCoroutine(MoveToSafeRoom());
                 }
                 else
@@ -56,7 +57,7 @@ namespace UB
 
             hasInteracted = false;
 
-            WorldSceneManager.instance.LoadScene(WorldSceneManager.instance.safeSpaceRoomIndex + 1);
+            WorldSceneManager.instance.LoadScene(sceneIndex);
         }
 
         IEnumerator MoveToSafeRoom()

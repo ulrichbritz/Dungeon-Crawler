@@ -6,19 +6,26 @@ namespace UB
 {
     public class AbilityCollider : DamageCollider
     {
+        AbilityProjectile abilityProjectile;
+
         protected override void Awake()
         {
             base.Awake();
 
+            abilityProjectile = GetComponent<AbilityProjectile>();
+
             OnEnable();
         }
 
-        private void OnTriggerEnter(Collider other)
+        protected override void OnTriggerEnter(Collider other)
         {
-            if(other.GetComponent<EnemyStats>() != null)
+            base.OnTriggerEnter(other);
+
+            if (other.GetComponent<EnemyStats>() != null)
             {
                 EnemyStats enemyStats = other.GetComponent<EnemyStats>();
-                enemyStats.TakeDamage(0 , Mathf.RoundToInt(PlayerManager.instance.playerStats.GetMagicalDamage(PlayerManager.instance.abilities.abilities[1].magicalDamage)));
+                //enemyStats.TakeDamage(abilityProjectile.carriedPhysicalDamage, abilityProjectile.carriedMagicalDamage);
+                enemyStats.TakeDamage(abilityProjectile.carriedPhysicalDamage, Mathf.RoundToInt(PlayerManager.instance.abilities.abilities[1].magicalDamage));
             }
         }
 
