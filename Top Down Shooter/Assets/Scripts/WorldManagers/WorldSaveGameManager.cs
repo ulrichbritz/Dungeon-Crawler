@@ -92,6 +92,8 @@ namespace UB
 
             currentSaveData = saveFileDataWriter.LoadSaveFile();
 
+            playerManager.LoadGameFromCurrentSaveSlot(ref currentSaveData);
+
             WorldSceneManager.instance.LoadGame();
         }
 
