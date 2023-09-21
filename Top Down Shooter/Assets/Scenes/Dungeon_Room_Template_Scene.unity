@@ -512,5 +512,11 @@ PrefabInstance:
       propertyPath: offset.y
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: 5603546337341212711, guid: a00e3ce8cf2cd38478871c6ce0be8a2b,
+        type: 3}
+      propertyPath: roomPrefab
+      value: 
+      objectReference: {fileID: 552356835216986936, guid: e77a9e6e4d9519e4b9e3cda64ed08e92,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a00e3ce8cf2cd38478871c6ce0be8a2b, type: 3}
