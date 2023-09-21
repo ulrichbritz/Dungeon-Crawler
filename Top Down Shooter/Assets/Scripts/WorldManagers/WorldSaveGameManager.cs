@@ -45,6 +45,7 @@ namespace UB
 
         private void Update()
         {
+            /*
             if (saveGame)
             {
                 saveGame = false;
@@ -56,6 +57,7 @@ namespace UB
                 loadGame = false;
                 LoadAPreviousGame();
             }
+            */
         }
 
         private void CreateSaveFileNameBasedOnSlotBeingUsed()
