@@ -34,10 +34,11 @@ namespace UB
         protected virtual void Update()
         {
             attackCooldown -= Time.deltaTime;
+            print(attackCooldown);
         }
 
         public virtual void Attack(CharacterStats targetStats)
-        {
+        {         
             targetTransform = targetStats.transform;
             DamageCollider damageCollider = GetComponentInChildren<DamageCollider>();
             if(damageCollider != null)
