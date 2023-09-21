@@ -41,7 +41,8 @@ namespace UB
                 }
                 else
                 {
-                    StartCoroutine(MoveToNextRoom(3));
+                    PlayerManager.instance.currentLevel += 1;
+                    StartCoroutine(MoveToNextRoom(PlayerManager.instance.currentLevel + 2));
                 }    
             }
 

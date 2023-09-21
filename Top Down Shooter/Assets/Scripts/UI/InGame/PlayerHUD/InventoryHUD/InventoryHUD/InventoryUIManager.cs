@@ -37,7 +37,7 @@ namespace UB
             slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         }
 
-        private void UpdateUI()
+        public void UpdateUI()
         {
             for(int i = 0; i < slots.Length; i++)
             {
@@ -52,7 +52,7 @@ namespace UB
             }
         }
 
-        private void UpdateGoldUI()
+        public void UpdateGoldUI()
         {
             goldText.text = $"{playerInventoryManager.goldAmount}"; 
         }

@@ -26,12 +26,20 @@ namespace UB
 
         public IEnumerator DisplayGameMessage(string message)
         {
+            gameMessageText.gameObject.SetActive(true);
             gameMessageText.text = "";
             gameMessageText.text = message;
 
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
 
             gameMessageText.text = "";
+            gameMessageText.gameObject.SetActive(false);
+        }
+
+        public void HideGameMessage()
+        {
+            gameMessageText.text = "";
+            gameMessageText.gameObject.SetActive(false);
         }
     }
 }

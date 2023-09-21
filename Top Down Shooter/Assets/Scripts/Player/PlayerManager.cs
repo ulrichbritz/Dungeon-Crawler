@@ -10,6 +10,7 @@ namespace UB
         public static PlayerManager instance;
 
         [SerializeField] public int characterID;
+        [HideInInspector] public int currentLevel = 0;
 
         [Header("Scripts")]
         [HideInInspector] public PlayerInputManager playerInputManager;

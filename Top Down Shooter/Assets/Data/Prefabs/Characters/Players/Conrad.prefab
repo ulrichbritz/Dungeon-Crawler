@@ -881,8 +881,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 985144842006638781}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2, y: 0.28, z: 2.86}
+  m_LocalRotation: {x: 0.52429664, y: 0.47980097, z: -0.48920113, w: 0.5055555}
+  m_LocalPosition: {x: 30.64708, y: 116.8343, z: 15.4608345}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1554,6 +1554,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2733734446443928801}
+        m_TargetAssemblyTypeName: UB.GameMessageHUD, Assembly-CSharp
+        m_MethodName: HideGameMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2739133724185818503}
         m_TargetAssemblyTypeName: UB.PlayerUIManager, Assembly-CSharp
         m_MethodName: CloseShop
@@ -9649,6 +9661,7 @@ MonoBehaviour:
   isDead: 0
   isPerformingAction: 0
   characterID: 0
+  currentLevel: 0
   playerInputManager: {fileID: 0}
   playerLocomotionManager: {fileID: 0}
   playerAnimationManager: {fileID: 0}
