@@ -54,27 +54,29 @@ namespace UB
         public void OnBuyButton()
         {
             //if has enough coin
-
-            if (isGearSlot)
+            if(PlayerManager.instance.playerInventoryManager.goldAmount >= item.itemShopValue)
             {
-                if (PlayerManager.instance.playerInventoryManager.Add(item))
+                if (isGearSlot)
                 {
-                    WorldSFXManager.instance.PlaySuccessFulItemPurchase(1);
-                }
-                else
-                {
-                    WorldSFXManager.instance.PlayGameErrorSFX(1);
+                    if (PlayerManager.instance.playerInventoryManager.Add(item))
+                    {
+                        WorldSFXManager.instance.PlaySuccessFulItemPurchase(1);
+                    }
+                    else
+                    {
+                        WorldSFXManager.instance.PlayGameErrorSFX(1);
+                        StartCoroutine(GameMessageHUD.instance.DisplayGameMessage("Not enough room in inventory for item."));
+                    }
                 }
             }
-            
-        }
-
-        public void UseItem()
-        {
-            if (item != null)
+            else
             {
-                item.Use();
+                WorldSFXManager.instance.PlayGameErrorSFX(1);
+                StartCoroutine(GameMessageHUD.instance.DisplayGameMessage("Not enough gold to purchase item."));
             }
+
+
+
         }
     }
 }

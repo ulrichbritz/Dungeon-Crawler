@@ -23,13 +23,13 @@ namespace UB
 
         private void Awake()
         {
-            playerInventoryManager = PlayerManager.instance.playerInventoryManager;
+            //playerInventoryManager = PlayerManager.instance.playerInventoryManager;
         }
 
         private void Start()
         {
             playerUIManager = PlayerUIManager.instance;
-            playerInventoryManager = PlayerManager.instance.playerInventoryManager;
+            //playerInventoryManager = PlayerManager.instance.playerInventoryManager;
 
             playerInventoryManager.onItemChangedCallback += UpdateUI;
             playerInventoryManager.OnGoldChangedCallback += UpdateGoldUI;
@@ -54,7 +54,7 @@ namespace UB
 
         private void UpdateGoldUI()
         {
-            //goldText.text = playerInventoryManager.goldAmount.ToString();
+            goldText.text = $"{playerInventoryManager.goldAmount}"; 
         }
     }
 }

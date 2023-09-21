@@ -61,7 +61,12 @@ namespace UB
         {
             base.Die();
 
-            
+            DamageCollider[] damageColliders = GetComponentsInChildren<DamageCollider>();
+
+            foreach(DamageCollider damageCollider in damageColliders)
+            {
+                damageCollider.OnDisable();
+            }
 
             EnemyManager enemyManager = GetComponent<EnemyManager>();
             if(enemyManager != null)
