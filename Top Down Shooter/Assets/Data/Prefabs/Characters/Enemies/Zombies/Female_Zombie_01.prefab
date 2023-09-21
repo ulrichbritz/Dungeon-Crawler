@@ -1882,7 +1882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efe4c25b1073c3428117c1334421e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 15
   maxMana: 10
   physicalDamage: 3
   magicalDamage: 0
@@ -1900,8 +1900,8 @@ MonoBehaviour:
   damageTakenText: {fileID: 1064889061598739426}
   goldGiveUI: {fileID: 1169263335540316872}
   goldGivenText: {fileID: 4858393373962792352}
-  minCoinValue: 3
-  maxCoinValue: 5
+  minCoinValue: 10
+  maxCoinValue: 15
 --- !u!114 &6228057575844624587
 MonoBehaviour:
   m_ObjectHideFlags: 0

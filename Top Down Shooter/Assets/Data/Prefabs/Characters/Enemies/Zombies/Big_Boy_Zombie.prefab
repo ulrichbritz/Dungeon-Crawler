@@ -440,8 +440,8 @@ MonoBehaviour:
   damageTakenText: {fileID: 2198837568302415583}
   goldGiveUI: {fileID: 35719992955412469}
   goldGivenText: {fileID: 5992200810330695837}
-  minCoinValue: 10
-  maxCoinValue: 15
+  minCoinValue: 30
+  maxCoinValue: 50
 --- !u!114 &1085663920466112787
 MonoBehaviour:
   m_ObjectHideFlags: 0

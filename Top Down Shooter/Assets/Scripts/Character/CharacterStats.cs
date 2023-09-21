@@ -33,7 +33,7 @@ namespace UB
         [Header("Speed")]
         public float moveSpeed;
 
-        [SerializeField] private float manaRegenSpeed = 1f;
+        [SerializeField] private float manaRegenSpeed = 3f;
         private float manaRegenTimer = 0f;
 
         [Header("Blood")]
@@ -54,6 +54,11 @@ namespace UB
         }
 
         protected virtual void Update()
+        {
+            HandleManaRegen();
+        }
+
+        protected virtual void HandleManaRegen()
         {
             if (currentMana < maxMana)
             {
