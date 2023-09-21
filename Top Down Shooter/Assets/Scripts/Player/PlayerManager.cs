@@ -36,6 +36,9 @@ namespace UB
         [Header("Player Specific Flags")]
         [HideInInspector] public bool hasUIOpen = false;
 
+        [Header("SaveData")]
+        float secondsPlayed;
+
         protected override void Awake()
         {
             if(instance == null)
@@ -67,6 +70,16 @@ namespace UB
             base.Start();
         }
 
+        public void SaveGameDataToCurrentSaveSlot(ref PlayerSaveData currentSaveData)
+        {
+            currentSaveData.secondsPlayed = secondsPlayed;
+        }
+
+        public void LoadGameFromCurrentSaveSlot(ref PlayerSaveData currentSaveData)
+        {
+            secondsPlayed = currentSaveData.secondsPlayed;
+        }
+
         protected override void Update()
         {
             base.Update();
@@ -78,6 +91,8 @@ namespace UB
         {
             if (abilities.CheckForAbilityInput() == true)
                 return;
+
+            //isPerformingAction = false; uncomment for cancelling animations
 
             //shoot ray from camera to mouse pos
             Ray ray = PlayerCameraManager.instance.cameraObject.ScreenPointToRay(Input.mousePosition);

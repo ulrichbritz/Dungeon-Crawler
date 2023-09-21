@@ -29,12 +29,28 @@ namespace UB
 
         public void StartNewGame()
         {
-            SceneManager.LoadScene(characterSelectionIndex);
+            //WorldSaveGameManager.instance.CreateNewGame();
+
+            StartCoroutine(StartNewGameRun());
+        }
+
+        public IEnumerator StartNewGameRun()
+        {
+            AsyncOperation loadOperation = SceneManager.LoadSceneAsync(characterSelectionIndex);
+
+            yield return null;
         }
 
         public void LoadGame()
         {
+            StartCoroutine(LoadGameRun());
+        }
 
+        public IEnumerator LoadGameRun()
+        {
+            AsyncOperation loadOperation = SceneManager.LoadSceneAsync(safeSpaceRoomIndex);
+
+            yield return null;
         }
 
         public void LoadScene(int sceneIndex)
