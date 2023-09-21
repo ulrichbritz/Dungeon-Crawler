@@ -57,7 +57,7 @@ namespace UB
                         FaceTarget();
 
                         //attack player
-                        characterAnimationManager.PlayTargetAnimation("Basic_Attack_01", true, false);
+                       // characterAnimationManager.PlayTargetAnimation("Basic_Attack_01", true, false);
                         CharacterStats targetStats = playerManagingScript.player.GetComponent<CharacterStats>();
 
                         if (targetStats != null)
